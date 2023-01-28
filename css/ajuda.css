@@ -1,0 +1,27 @@
+body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background: #373c4f;
+}
+h1 {
+    font-size: 50px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: 2px;
+    color: #dc3545;
+}
+.tamanho ,.back {
+    background: #6ea8fe;
+  }
+  .true , .true:hover {
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: 18px;
+  }
+  .false , .false:hover{
+    background: #dc3545;
+    color: #ffffff;
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }

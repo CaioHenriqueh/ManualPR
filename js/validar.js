@@ -1,6 +1,9 @@
 const emailLogin = document.getElementById("emailLogin");
 const senha = document.getElementById("passwordLogin");
 const btnLogin = document.getElementById("btnLogin");
+const NameUser = document.querySelector("#nameUser");
+
+
 
 btnLogin.addEventListener("click" , (e) => {
     e.preventDefault()

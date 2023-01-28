@@ -17,6 +17,8 @@ const calendar = document.querySelector(".calendar"),
   addEventTo = document.querySelector(".event-time-to "),
   addEventSubmit = document.querySelector(".add-event-btn ");
 
+let SomarHoras = 0;
+
 let today = new Date();
 let activeDay;
 let month = today.getMonth();
@@ -58,6 +60,16 @@ const months = [
 const eventsArr = [];
 getEvents();
 console.log(eventsArr);
+
+
+const NameUser = document.querySelector("#nameUser");
+if (localStorage.getItem("name")) {
+  NameUser.textContent = localStorage.getItem("name");
+} else {
+  NameUser.textContent = 'undefined'
+}
+
+
 
 //function to add days in days with class day and prev-date next-date on previous month and next month days and active on today
 function initCalendar() {
@@ -311,6 +323,8 @@ addEventTo.addEventListener("input", (e) => {
   }
 });
 
+
+
 //function to add event to eventsArr
 addEventSubmit.addEventListener("click", () => {
   const eventTitle = addEventTitle.value;
@@ -320,7 +334,11 @@ addEventSubmit.addEventListener("click", () => {
     alert("Por favor preencha todos os campos");
     return;
   }
-
+  /*soma as horas*/
+  /*const _SomarhorasPioneiros =  parseInt(eventTimeTo) - parseInt(eventTimeFrom);
+*/
+    parseInt(eventTimeTo) - parseInt(eventTimeFrom)
+    
   //check correct time format 24 hour
   const timeFromArr = eventTimeFrom.split(":");
   const timeToArr = eventTimeTo.split(":");
@@ -338,7 +356,6 @@ addEventSubmit.addEventListener("click", () => {
 
   const timeFrom = convertTime(eventTimeFrom);
   const timeTo = convertTime(eventTimeTo);
-
   //check if event is already added
   let eventExist = false;
   eventsArr.forEach((event) => {
@@ -362,6 +379,7 @@ addEventSubmit.addEventListener("click", () => {
     title: eventTitle,
     time: timeFrom + " - " + timeTo,
   };
+
   console.log(newEvent);
   console.log(activeDay);
   let eventAdded = false;
@@ -399,6 +417,7 @@ addEventSubmit.addEventListener("click", () => {
     activeDayEl.classList.add("event");
   }
 });
+
 
 //function to delete event when clicked on event
 eventsContainer.addEventListener("click", (e) => {
