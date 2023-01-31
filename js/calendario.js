@@ -355,7 +355,6 @@ function anotateHours() {
       somaRelatorio += arrayPr[i]
       
     }
-
     console.log(somaRelatorio);
 
     localStorage.setItem('horasSomadas' , somaRelatorio);
