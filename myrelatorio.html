@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./img/download.png" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/tabela.css" />
+    <title>Relatorio PR</title>
+  </head>
+  <body>
+    <nav class="navbar fixed-top tamanho lenght">
+      <div class="container-fluid lenghty">
+        <!--estava 5pc-->
+        <img
+          src="./img/relatorioLogo.png"
+          style="height: 5pc; margin-left: 10%"
+          alt="logo img relatorio"
+        />
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="offcanvas offcanvas-end back"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+        >
+          <div class="offcanvas-header">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a
+                  class="nav-link btn btn-primary true"
+                  aria-current="page"
+                  href="./home.html"
+                  >Relatar Horas</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link btn btn-primary true"
+                  href="blocodeNotas.html"
+                  >Bloco de notas</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link btn btn-primary true"
+                  aria-current="page"
+                  href="tarefa.html"
+                  >Lista de tarefas</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link btn false"
+                  aria-current="page"
+                  href="help.html"
+                  >ajuda</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section class="table-User-Horas">
+        <h1 class="title-relatorio">Relatorio Mensal</h1>
+      <table class="table">
+        <thead>
+          <th>Horas</th>
+          <th>Publicações</th>
+          <th>Estudos</th>
+          <th>Revisitas</th>
+          <th>Videos</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="horasTD">horas</td>
+            <td id="publiTD">Publicações</td>
+            <td id="estudoTD">Estudos</td>
+            <td id="revisitaTD">Revisitas</td>
+            <td id="videosTD">Videos</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="relate">
+      <div class="relate-Publi-Videos">
+        <div class="publi">
+          <label for="publi">Publicações</label>
+          <br />
+          <input type="text" placeholder="Publicações" id="publi" />
+        </div>
+        <div class="publi">
+            <label for="estudos">Estudos</label>
+            <br />
+            <input type="number" placeholder="Estudos" id="estudos" />
+          </div>
+          <div class="publi">
+            <label for="revisita">Revisitas</label>
+            <br />
+            <input type="number" placeholder="Revisitas" id="revisita" />
+          </div>
+        <div class="videos">
+          <label for="Videos">Videos</label>
+          <br />
+          <input type="number" placeholder="Videos" id="Videos" />
+        </div>
+        <button class="button-9" role="button" id="submit">Relatar</button>
+      </div>
+    </section>
+
+    <section class="table-User-Horas anual">
+        <h1 class="title-relatorio">Relatorio Anual</h1>
+      <table class="table">
+        <thead>
+          <th>Horas</th>
+          <th>Publicações</th>
+          <th>Estudos</th>
+          <th>Revisitas</th>
+          <th>Videos</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="horasAnual">horas</td>
+            <td id="publiAnual">Publicações</td>
+            <td id="estudoAnual">Estudos</td>
+            <td id="revisitaAnual">Revisitas</td>
+            <td id="videosAnual">Videos</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/Relatorio.js"></script>
+  </body>
+</html>

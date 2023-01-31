@@ -62,6 +62,11 @@ getEvents();
 console.log(eventsArr);
 
 
+const horasInicio = document.getElementById("inicio");
+const horasFim = document.getElementById("fim");
+
+
+
 const NameUser = document.querySelector("#nameUser");
 if (localStorage.getItem("name")) {
   NameUser.textContent = localStorage.getItem("name");
@@ -323,10 +328,11 @@ addEventTo.addEventListener("input", (e) => {
   }
 });
 
+const arrayPr = JSON.parse(localStorage.getItem("horasPRSJL")) || []
 
+console.log(arrayPr.length);
 
-//function to add event to eventsArr
-addEventSubmit.addEventListener("click", () => {
+function anotateHours() {
   const eventTitle = addEventTitle.value;
   const eventTimeFrom = addEventFrom.value;
   const eventTimeTo = addEventTo.value;
@@ -334,11 +340,26 @@ addEventSubmit.addEventListener("click", () => {
     alert("Por favor preencha todos os campos");
     return;
   }
+
   /*soma as horas*/
   /*const _SomarhorasPioneiros =  parseInt(eventTimeTo) - parseInt(eventTimeFrom);
 */
-    parseInt(eventTimeTo) - parseInt(eventTimeFrom)
-    
+  // set de horas
+    const matchHoras = parseFloat(eventTimeTo) - parseFloat(eventTimeFrom);
+
+    arrayPr.push(matchHoras);
+
+    localStorage.setItem("horasPRSJL" , JSON.stringify(arrayPr))
+    somaRelatorio = 0;
+    for(let i=0; i < arrayPr.length; i++) {
+      somaRelatorio += arrayPr[i]
+      
+    }
+
+    console.log(somaRelatorio);
+
+    localStorage.setItem('horasSomadas' , somaRelatorio);
+
   //check correct time format 24 hour
   const timeFromArr = eventTimeFrom.split(":");
   const timeToArr = eventTimeTo.split(":");
@@ -416,7 +437,15 @@ addEventSubmit.addEventListener("click", () => {
   if (!activeDayEl.classList.contains("event")) {
     activeDayEl.classList.add("event");
   }
-});
+}
+
+
+
+
+
+
+//function to add event to eventsArr
+addEventSubmit.addEventListener("click", anotateHours)
 
 
 //function to delete event when clicked on event

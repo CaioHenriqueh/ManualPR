@@ -27,8 +27,12 @@ body {
   justify-content: center;
   background-color: #373c4f;
 }
+
 .tamanho ,.back {
   background: #6ea8fe;
+}
+.table-horas{
+  border: 2px solid white;
 }
 .true , .true:hover {
   margin-bottom: 20px;

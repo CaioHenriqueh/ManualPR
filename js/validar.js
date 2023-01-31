@@ -6,7 +6,7 @@ const NameUser = document.querySelector("#nameUser");
 
 
 btnLogin.addEventListener("click" , (e) => {
-    e.preventDefault()
+    e.preventDefault();
     if(localStorage.getItem("email") === emailLogin.value && localStorage.getItem("senha") === senha.value) {
        window.location.href = 'home.html'
     }else {
