@@ -568,6 +568,9 @@ h3 {
   font-size: 23px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+#nameUser {
+  text-transform: capitalize;
+}
 .header-home a {
   text-decoration: none;
 }
