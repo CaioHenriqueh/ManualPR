@@ -4,6 +4,7 @@ const publiTD = document.getElementById("publiTD");
 const estudosTD = document.getElementById("estudoTD");
 const revisitaTD = document.getElementById("revisitaTD");
 const videosTD = document.getElementById("videosTD");
+ 
 
 const atualizaVideos = () => {
     if(localStorage.getItem("VideoSomados")) {
