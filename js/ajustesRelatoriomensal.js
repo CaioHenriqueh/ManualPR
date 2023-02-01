@@ -1,6 +1,6 @@
 const resetarRelatorio = document.getElementById("resetRelatorio");
 
-resetarRelatorio.addEventListener("click", () => {
+resetarRelatorio.addEventListener("click" , () => {
     localStorage.removeItem("publicacoesSomadas");
     localStorage.removeItem("horasSomadas");
     localStorage.removeItem("somaEstudos");
@@ -15,11 +15,11 @@ resetarRelatorio.addEventListener("click", () => {
 });
 
 
-const geraPdf = document.getElementById("pdfRelatorio");
+const geraPdf =  document.getElementById("pdfRelatorio");
 
 const data = new Date();
 
-const mes = String(data.getMonth() + 1).padStart(2, "0");
+const mes =  String(data.getMonth() + 1).padStart(2 , "0");
 
 const ano = data.getFullYear();
 
@@ -39,26 +39,26 @@ const dataAtual = `${mes}/${ano}`
 } */
 
 const validaHoras = () => {
-    if (localStorage.getItem("horasSomadas")) {
-        if (localStorage.getItem("horasSomadas") > 1) {
+    if(localStorage.getItem("horasSomadas")){
+        if(localStorage.getItem("horasSomadas") > 1 ){
             return ` Horas : ${localStorage.getItem("horasSomadas")} Horas`
-        } else {
-            return `Horas : ${localStorage.getItem("horasSomadas")} Hora`
+        }else  {
+            return  `Horas : ${localStorage.getItem("horasSomadas")} Hora`
         }
-    } else {
+    }else {
         return `Horas : ${0} Hora`
     }
 }
 
 
-const validaVideos = () => {
-    if (localStorage.getItem("VideoSomados")) {
-        if (localStorage.getItem("VideoSomados") > 1) {
+ const validaVideos = () => {
+    if(localStorage.getItem("VideoSomados")) {
+        if(localStorage.getItem("VideoSomados") > 1) {
             return ` Videos : ${localStorage.getItem("VideoSomados")} Videos`
-        } else {
+        }else {
             return ` Videos : ${localStorage.getItem("VideoSomados")} Video`
         }
-    } else {
+    }else {
         return ` Videos : ${0} Video`
     }
 }
@@ -66,13 +66,13 @@ const validaVideos = () => {
 const validaPubli = () => {
     if (localStorage.getItem("publicacoesSomadas")) {
         if (localStorage.getItem("publicacoesSomadas") > 1) {
-            return `Publicações : ${localStorage.getItem("publicacoesSomadas")} Publicações`
+            return  `Publicações : ${localStorage.getItem("publicacoesSomadas")} Publicações`
         }
         else {
-            return `Publicações :${localStorage.getItem("publicacoesSomadas")} Publicação`
+            return  `Publicações :${localStorage.getItem("publicacoesSomadas")} Publicação`
         }
     } else {
-        return `Publicações : ${0} Publicação`;
+        return  `Publicações : ${0} Publicação`;
     }
 }
 
@@ -90,7 +90,7 @@ const validaEstudos = () => {
 const validaRevisitas = () => {
     if (localStorage.getItem("Somadasrevisitas")) {
         if (localStorage.getItem("Somadasrevisitas") > 1) {
-            return `Revisita : ${localStorage.getItem("Somadasrevisitas")} Revisitas`
+           return `Revisita : ${localStorage.getItem("Somadasrevisitas")} Revisitas`
         } else {
             return `Revisita : ${localStorage.getItem("Somadasrevisitas")} Revisita`
         }
@@ -103,35 +103,24 @@ const NameUserPDF = localStorage.getItem("name");
 
 const capitalized = NameUserPDF[0].toUpperCase() + NameUserPDF.substr(1);
 
-geraPdf.addEventListener("click", () => {
+geraPdf.addEventListener("click" , () => {
+    let doc = new jsPDF()
 
+    doc.text(`
+    Relatorio de ${localStorage.getItem("name")} ${dataAtual}
 
-    const janela = window.open('', '', 'width= 800 , heigth=600')
+    ${validaHoras()}
 
-    janela.document.write("<html> <head>");
-    janela.document.write("<title>Relatorio em PDF</title></head>");
-    janela.document.write("<body>");
-    janela.document.write(`
+    ${validaPubli()}
 
-    Relatorio de ${localStorage.getItem("name")} ${dataAtual} <br>
-    <br>
-    ${validaHoras()}<br>
-    <br>
-    ${validaPubli()}<br>
-    <br>
-    ${validaEstudos()}<br>
-    <br>
-    ${validaRevisitas()}<br>
-    <br>
-    ${validaVideos()}<br>
+    ${validaEstudos()}
 
-    `);
+    ${validaRevisitas()}
 
-    janela.document.write("</body></html>");
+    ${validaVideos()}
 
-    janela.document.close();
+    ` , 10 , 10);
 
-    janela.print();
-
+    doc.save(`Relatorio ${capitalized}.pdf`);
 })
 
