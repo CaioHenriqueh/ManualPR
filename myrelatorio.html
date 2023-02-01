@@ -14,7 +14,7 @@
     <title>Relatorio PR</title>
   </head>
   <body>
-    <nav class="navbar fixed-top tamanho lenght">
+    <nav class="navbar tamanho lenght">
       <div class="container-fluid lenghty">
         <!--estava 5pc-->
         <img
@@ -91,15 +91,17 @@
         </div>
       </div>
     </nav>
-    <section class="table-User-Horas">
-        <h1 class="title-relatorio">Relatorio Mensal</h1>
+    <section class="table-User-Horas nav-che">
+      <h1 class="title-relatorio">Relatorio Mensal</h1>
       <table class="table">
         <thead>
-          <th>Horas</th>
-          <th>Publicações</th>
-          <th>Estudos</th>
-          <th>Revisitas</th>
-          <th>Videos</th>
+          <tr>
+            <th>Horas</th>
+            <th>Publicações</th>
+            <th>Estudos</th>
+            <th>Revisitas</th>
+            <th>Videos</th>
+          </tr>
         </thead>
         <tbody>
           <tr>
@@ -112,7 +114,14 @@
         </tbody>
       </table>
     </section>
-
+    <div class="btns-for-table">
+      <button class="button-70" role="button" id="resetRelatorio">
+        Resetar Relatorio
+      </button>
+      <button id="pdfRelatorio" class="button-70" role="button">
+        Baixar Relatorio em PDF
+      </button>
+    </div>
     <section class="relate">
       <div class="relate-Publi-Videos">
         <div class="publi">
@@ -121,15 +130,15 @@
           <input type="text" placeholder="Publicações" id="publi" />
         </div>
         <div class="publi">
-            <label for="estudos">Estudos</label>
-            <br />
-            <input type="number" placeholder="Estudos" id="estudos" />
-          </div>
-          <div class="publi">
-            <label for="revisita">Revisitas</label>
-            <br />
-            <input type="number" placeholder="Revisitas" id="revisita" />
-          </div>
+          <label for="estudos">Estudos</label>
+          <br />
+          <input type="number" placeholder="Estudos" id="estudos" />
+        </div>
+        <div class="publi">
+          <label for="revisita">Revisitas</label>
+          <br />
+          <input type="number" placeholder="Revisitas" id="revisita" />
+        </div>
         <div class="videos">
           <label for="Videos">Videos</label>
           <br />
@@ -140,7 +149,7 @@
     </section>
 
     <section class="table-User-Horas anual">
-        <h1 class="title-relatorio">Relatorio Anual</h1>
+      <h1 class="title-relatorio">Relatorio Anual</h1>
       <table class="table">
         <thead>
           <th>Horas</th>
@@ -165,6 +174,12 @@
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"
+      integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/ajustesRelatoriomensal.js"></script>
     <script src="js/Relatorio.js"></script>
   </body>
 </html>

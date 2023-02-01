@@ -81,7 +81,6 @@ if (localStorage.getItem('horasSomadas')) {
 
 
 
-
 const publi = document.getElementById("publi");
 
 const publicacoes = JSON.parse(localStorage.getItem("publicacoes")) || [];
