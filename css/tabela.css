@@ -10,6 +10,7 @@ body {
 .nav-che , .anual {
   overflow-x:auto ;
 }
+
 .true,
 .true:hover {
   margin-bottom: 20px;
@@ -23,9 +24,7 @@ body {
   font-size: 18px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.anual {
-  margin-top: -100px;
-}
+
 .title-relatorio {
   text-align: center;
   color: white;
@@ -47,12 +46,19 @@ th {
 
 td,
 tr {
-  background: #707fd4;
+
   border: 3px solid #ffffff;
 }
 td {
   color: #ffffff;
   font-size: 20px;
+}
+#tr-mensal ,#th-anual {
+  background: #13293d;
+}
+
+#mensal-user , #grup-anual {
+  background: #247ba0;
 }
 .btns-for-table {
   text-align: center;
@@ -143,4 +149,7 @@ input[type="number"]::-webkit-inner-spin-button {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+}
+#section-mensal , #section-anual {
+  margin-top: 20px;
 }

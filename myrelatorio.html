@@ -91,11 +91,11 @@
         </div>
       </div>
     </nav>
-    <section class="table-User-Horas nav-che">
+    <section class="table-User-Horas nav-che espace" id="section-mensal">
       <h1 class="title-relatorio">Relatorio Mensal</h1>
       <table class="table">
         <thead>
-          <tr>
+          <tr id="tr-mensal">
             <th>Horas</th>
             <th>Publicações</th>
             <th>Estudos</th>
@@ -104,12 +104,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td id="horasTD">horas</td>
-            <td id="publiTD">Publicações</td>
-            <td id="estudoTD">Estudos</td>
-            <td id="revisitaTD">Revisitas</td>
-            <td id="videosTD">Videos</td>
+          <tr id="mensal-user">
+            <td id="horasTD"></td>
+            <td id="publiTD"></td>
+            <td id="estudoTD"></td>
+            <td id="revisitaTD"></td>
+            <td id="videosTD"></td>
           </tr>
         </tbody>
       </table>
@@ -148,23 +148,25 @@
       </div>
     </section>
 
-    <section class="table-User-Horas anual">
+    <section class="table-User-Horas anual espace" id="section-anual">
       <h1 class="title-relatorio">Relatorio Anual</h1>
       <table class="table">
         <thead>
-          <th>Horas</th>
-          <th>Publicações</th>
-          <th>Estudos</th>
-          <th>Revisitas</th>
-          <th>Videos</th>
+          <tr id="th-anual">
+          <th class="anual-th-td">Horas</th>
+          <th class="anual-th-td">Publicações</th>
+          <th class="anual-th-td">Estudos</th>
+          <th class="anual-th-td">Revisitas</th>
+          <th class="anual-th-td">Videos</th>
+        </tr>
         </thead>
         <tbody>
-          <tr>
-            <td id="horasAnual">horas</td>
-            <td id="publiAnual">Publicações</td>
-            <td id="estudoAnual">Estudos</td>
-            <td id="revisitaAnual">Revisitas</td>
-            <td id="videosAnual">Videos</td>
+          <tr id="grup-anual">
+            <td id="horasAnual" class="anual-th-td">horas</td>
+            <td id="publiAnual" class="anual-th-td">Publicações</td>
+            <td id="estudoAnual" class="anual-th-td">Estudos</td>
+            <td id="revisitaAnual" class="anual-th-td">Revisitas</td>
+            <td id="videosAnual" class="anual-th-td">Videos</td>
           </tr>
         </tbody>
       </table>
