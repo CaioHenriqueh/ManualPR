@@ -101,7 +101,6 @@ const validaRevisitas = () => {
 
 const NameUserPDF = localStorage.getItem("name");
 
-const capitalized = NameUserPDF[0].toUpperCase() + NameUserPDF.substr(1);
 
 geraPdf.addEventListener("click" , () => {
     let doc = new jsPDF()
@@ -121,6 +120,6 @@ geraPdf.addEventListener("click" , () => {
 
     ` , 10 , 10);
 
-    doc.save(`Relatorio ${capitalized}.pdf`);
+    doc.save(`Relatorio ${NameUserPDF}.pdf`);
 })
 

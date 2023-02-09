@@ -5,6 +5,7 @@ const estudosTD = document.getElementById("estudoTD");
 const revisitaTD = document.getElementById("revisitaTD");
 const videosTD = document.getElementById("videosTD"); 
 
+tdHorasAnual
 
 const atualizaVideos = () => {
     if(localStorage.getItem("VideoSomados")) {
@@ -69,15 +70,7 @@ if (localStorage.getItem('horasSomadas')) {
     tdHoras.innerText = `${0} Horas`;
 }
 
-if (localStorage.getItem('horasSomadas')) {
-    if (localStorage.getItem('horasSomadas') > 1) {
-        tdHorasAnual.innerText = `${localStorage.getItem("horasSomadas")} Horas`
-    } else {
-        tdHorasAnual.innerText = `${localStorage.getItem("horasSomadas")} Hora`
-    }
-} else {
-    tdHorasAnual.innerText = `${0} Horas`;
-}
+
 
 
 
@@ -186,7 +179,6 @@ const Funcrevisitas = () => {
         
         localStorage.setItem("Somadasrevisitas", somadasRevisitas)
     }
-
 }
 const btnRelate = document.getElementById("submit");
 btnRelate.addEventListener("click", () => {

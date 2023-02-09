@@ -328,9 +328,8 @@ addEventTo.addEventListener("input", (e) => {
   }
 });
 
-const arrayPr = JSON.parse(localStorage.getItem("horasPRSJL")) || []
+const arrayPr = JSON.parse(localStorage.getItem("horasPRSJL")) || [];
 
-console.log(arrayPr.length);
 
 function anotateHours() {
   const eventTitle = addEventTitle.value;
@@ -344,8 +343,13 @@ function anotateHours() {
   /*soma as horas*/
   /*const _SomarhorasPioneiros =  parseInt(eventTimeTo) - parseInt(eventTimeFrom);
 */
-  // set de horas
-    const matchHoras = parseFloat(eventTimeTo) - parseFloat(eventTimeFrom);
+  // set de horas 
+  //Math.floor() 
+    const inicio = Number.parseFloat(eventTimeFrom , 10)
+    console.log(inicio);
+    const final = parseFloat(eventTimeTo)
+
+    const matchHoras =  final - inicio;
 
     arrayPr.push(matchHoras);
 
@@ -360,8 +364,8 @@ function anotateHours() {
     localStorage.setItem('horasSomadas' , somaRelatorio);
 
   //check correct time format 24 hour
-  const timeFromArr = eventTimeFrom.split(":");
-  const timeToArr = eventTimeTo.split(":");
+    const timeFromArr = eventTimeFrom.split(":");
+    const timeToArr = eventTimeTo.split(":");
   if (
     timeFromArr.length !== 2 ||
     timeToArr.length !== 2 ||
@@ -376,6 +380,7 @@ function anotateHours() {
 
   const timeFrom = convertTime(eventTimeFrom);
   const timeTo = convertTime(eventTimeTo);
+
   //check if event is already added
   let eventExist = false;
   eventsArr.forEach((event) => {
